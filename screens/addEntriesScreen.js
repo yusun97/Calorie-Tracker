@@ -4,7 +4,7 @@ import { commonStyle } from "../components/commonStyle";
 
 export default function AddEntriesScreen() {
   return (
-    <View>
+    <View style={commonStyle.generalContainer}>
       <Text>addEntriesScreen</Text>
     </View>
   );

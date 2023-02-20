@@ -4,10 +4,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AllEntriesScreen from "./AllEntriesScreen";
 import OverLimitEntriesScreen from "./OverLimitEntriesScreen";
+import { Pressable } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -16,14 +18,18 @@ export default function Home() {
         headerTitleStyle: {
           fontSize: 20,
         },
-        // tabBarStyle: { position: "absolute" },
-        // tabBarBackground: () => (
-        //   <BlurView
-        //     tint="light"
-        //     intensity={100}
-        //     style={{ backgroundColor: "rgb(64, 70, 146)" }}
-        //   />
-        // ),
+        headerRight: () => {
+          return (
+            //pressable button needed
+            <Pressable
+              onPress={() => {
+                navigation.navigate("AddEntries");
+              }}
+            >
+              <AntDesign name="plus" size={24} color="white" />
+            </Pressable>
+          );
+        },
       }}
     >
       <Tab.Screen

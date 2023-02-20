@@ -3,7 +3,7 @@ import React from "react";
 
 export default function EditEntriesScreen() {
   return (
-    <View>
+    <View style={commonStyle.generalContainer}>
       <Text>EditEntriesScreen</Text>
     </View>
   );
