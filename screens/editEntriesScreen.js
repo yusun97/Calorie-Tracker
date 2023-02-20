@@ -1,10 +1,10 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
 
-export default function editEntriesScreen() {
+export default function EditEntriesScreen() {
   return (
     <View>
-      <Text>editEntriesScreen</Text>
+      <Text>EditEntriesScreen</Text>
     </View>
-  )
+  );
 }

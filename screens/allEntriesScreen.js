@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet } from "react-native";
+import React from "react";
+import { commonStyle } from "../components/commonStyle";
 
-export default function allEntriesScreen() {
+export default function AllEntriesScreen() {
   return (
-    <View>
+    <View style={commonStyle.generalContainer}>
       <Text>allEntriesScreen</Text>
     </View>
-  )
+  );
 }
