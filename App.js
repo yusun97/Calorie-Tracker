@@ -1,10 +1,10 @@
-import { StatusBar } from "expo-status-bar"; //do we need this?
+import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
-import AddEntriesScreen from "./screens/AddEntriesScreen";
 import EditEntriesScreen from "./screens/EditEntriesScreen";
+import AddEntriesScreen from "./screens/AddEntriesScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,9 +20,13 @@ export default function App() {
           },
         }}
       >
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="AddEntries" component={AddEntriesScreen} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen name="EditEntries" component={EditEntriesScreen} />
+        <Stack.Screen name="AddEntries" component={AddEntriesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
