@@ -3,4 +3,5 @@ import React from "react";
 
 export const commonStyle = StyleSheet.create({
   generalContainer: { backgroundColor: "rgb(126,125,189)", flex: 1 },
+  headerStyle: { backgroundColor: "rgb(64,70,146)", height: 105 },
 });

@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AllEntriesScreen from "./AllEntriesScreen";
 import OverLimitEntriesScreen from "./OverLimitEntriesScreen";
 import { Pressable } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,10 +13,16 @@ export default function Home({ navigation }) {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: "rgb(64, 70, 146)", height: 105 },
+        headerStyle: { backgroundColor: "rgb(64,70,146)", height: 80 },
         headerTintColor: "#fff",
         headerTitleStyle: {
           fontSize: 20,
+        },
+        tabBarActiveTintColor: "rgb(239,189,67)",
+        tabBarStyle: {
+          backgroundColor: "rgb(64,70,146)",
+          height: 60,
+          paddingBottom: 10,
         },
         headerRight: () => {
           return (
@@ -25,8 +31,9 @@ export default function Home({ navigation }) {
               onPress={() => {
                 navigation.navigate("AddEntries");
               }}
+              style={{ padding: 10 }}
             >
-              <AntDesign name="plus" size={24} color="white" />
+              <MaterialCommunityIcons name="plus" size={25} color="white" />
             </Pressable>
           );
         },
@@ -35,13 +42,27 @@ export default function Home({ navigation }) {
       <Tab.Screen
         name="allEntries"
         component={AllEntriesScreen}
-        options={{ title: "All Entries" }}
+        options={{
+          title: "All Entries",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="coffee" color={color} size={size} />
+          ),
+          //   tabBarIcon: (data) => console.log(data),
+        }}
       />
       <Tab.Screen
         name="overLimitEntries"
         component={OverLimitEntriesScreen}
         options={{
           title: "Over-limit Entries",
+          tabBarIcon: ({ color, size }) => (
+            // console.log(color)
+            <MaterialCommunityIcons
+              name="exclamation-thick"
+              color={color}
+              size={size}
+            />
+          ),
         }}
       />
     </Tab.Navigator>
