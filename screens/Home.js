@@ -13,7 +13,7 @@ export default function Home({ navigation }) {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: "rgb(64,70,146)", height: 80 },
+        headerStyle: { backgroundColor: "rgb(64,70,146)", height: 90 },
         headerTintColor: "#fff",
         headerTitleStyle: {
           fontSize: 20,

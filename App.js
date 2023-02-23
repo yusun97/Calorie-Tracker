@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
 import EditEntriesScreen from "./screens/EditEntriesScreen";
 import AddEntriesScreen from "./screens/AddEntriesScreen";
-import { commonStyle } from "./components/commonStyle";
+import { commonStyle } from "./components/CommonStyle";
 
 const Stack = createNativeStackNavigator();
 

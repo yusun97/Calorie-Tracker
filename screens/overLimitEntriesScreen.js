@@ -1,6 +1,6 @@
-import { View, Text } from "react-native";
+import { View, Text, ViewBase } from "react-native";
 import React from "react";
-import { commonStyle } from "../components/commonStyle";
+import { commonStyle } from "../components/CommonStyle";
 
 export default function OverLimitEntriesScreen() {
   return (
