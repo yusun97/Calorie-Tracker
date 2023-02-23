@@ -6,6 +6,7 @@ import AllEntriesScreen from "./AllEntriesScreen";
 import OverLimitEntriesScreen from "./OverLimitEntriesScreen";
 import { Pressable } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import PressableButton from "../components/PressableButton";
 
 const Tab = createBottomTabNavigator();
 
@@ -24,17 +25,21 @@ export default function Home({ navigation }) {
           height: 60,
           paddingBottom: 10,
         },
+        //buttonPressed,
+        // customizedStyle,
+        // pressedStyle,
+        // children,
         headerRight: () => {
           return (
-            //pressable button needed
-            <Pressable
-              onPress={() => {
+            <PressableButton
+              buttonPressed={() => {
                 navigation.navigate("AddEntries");
               }}
-              style={{ padding: 10 }}
+              customizedStyle={{ padding: 10 }}
+              pressedStyle={{ opacity: 0.3 }}
             >
               <MaterialCommunityIcons name="plus" size={25} color="white" />
-            </Pressable>
+            </PressableButton>
           );
         },
       }}
