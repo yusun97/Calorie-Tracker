@@ -26,8 +26,16 @@ export default function App() {
           component={Home}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="EditEntries" component={EditEntriesScreen} />
-        <Stack.Screen name="AddEntries" component={AddEntriesScreen} />
+        <Stack.Screen
+          name="EditEntries"
+          component={EditEntriesScreen}
+          options={{ title: "Edit Entry" }}
+        />
+        <Stack.Screen
+          name="AddEntries"
+          component={AddEntriesScreen}
+          options={{ title: "Add An Entry" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
