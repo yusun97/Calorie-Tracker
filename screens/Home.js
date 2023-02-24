@@ -6,10 +6,12 @@ import AllEntriesScreen from "./AllEntriesScreen";
 import OverLimitEntriesScreen from "./OverLimitEntriesScreen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PressableButton from "../components/PressableButton";
+import { useState } from "react";
 
 const Tab = createBottomTabNavigator();
 
 export default function Home({ navigation }) {
+
   return (
     <Tab.Navigator
       screenOptions={{
