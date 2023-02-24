@@ -4,7 +4,6 @@ import React from "react";
 export default function PressableButton({
   buttonPressed,
   customizedStyle,
-  pressedStyle,
   children,
 }) {
   return (
@@ -13,7 +12,7 @@ export default function PressableButton({
         return [
           styles.pressableDefault,
           customizedStyle,
-          pressed && pressedStyle,
+          pressed && styles.pressedStyle,
         ];
       }}
       android_ripple={{ color: "white" }}
@@ -26,4 +25,5 @@ export default function PressableButton({
 
 const styles = StyleSheet.create({
   pressableDefault: { backgroundColor: "rgb(64,70,146)" },
+  pressedStyle: { opacity: 0.3 },
 });

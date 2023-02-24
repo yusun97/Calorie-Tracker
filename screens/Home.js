@@ -31,7 +31,6 @@ export default function Home({ navigation }) {
                 navigation.navigate("AddEntries");
               }}
               customizedStyle={{ padding: 10 }}
-              pressedStyle={{ opacity: 0.3 }}
             >
               <MaterialCommunityIcons name="plus" size={25} color="white" />
             </PressableButton>

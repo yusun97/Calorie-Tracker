@@ -16,6 +16,11 @@ export default function Input() {
     setDescription(changedDescription);
   }
 
+  function resetInformation() {
+    setCalories("");
+    setDescription("");
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.rowContainer}>
@@ -35,7 +40,10 @@ export default function Input() {
         />
       </View>
       <View style={styles.buttonContainer}>
-        <PressableButton customizedStyle={{ borderRadius: 5 }}>
+        <PressableButton
+          customizedStyle={{ borderRadius: 5 }}
+          buttonPressed={resetInformation}
+        >
           <Text style={styles.buttonText}>Reset</Text>
         </PressableButton>
         <PressableButton customizedStyle={{ borderRadius: 5 }}>
@@ -55,7 +63,7 @@ const styles = StyleSheet.create({
   },
   rowContainer: {
     flexDirection: "row",
-    padding: 5,
+    padding: 8,
     justifyContent: "space-between",
   },
   buttonContainer: {
