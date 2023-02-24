@@ -4,7 +4,7 @@ import { useState } from "react";
 import { commonStyle } from "./CommonStyle";
 import PressableButton from "./PressableButton";
 
-export default function Input() {
+export default function Input({ sendCalories, sendDescription }) {
   const [calories, setCalories] = useState("");
   const [description, setDescription] = useState("");
 
@@ -21,6 +21,12 @@ export default function Input() {
     setDescription("");
   }
 
+  function sendInformation() {
+    sendCalories(calories);
+    sendDescription(description);
+    resetInformation();
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.rowContainer}>
@@ -31,6 +37,7 @@ export default function Input() {
           style={styles.smallTextContainer}
         />
       </View>
+
       <View style={styles.rowContainer}>
         <Text style={styles.text}>Description</Text>
         <TextInput
@@ -39,6 +46,7 @@ export default function Input() {
           style={styles.bigTextContainer}
         />
       </View>
+
       <View style={styles.buttonContainer}>
         <PressableButton
           customizedStyle={{ borderRadius: 5 }}
@@ -46,7 +54,10 @@ export default function Input() {
         >
           <Text style={styles.buttonText}>Reset</Text>
         </PressableButton>
-        <PressableButton customizedStyle={{ borderRadius: 5 }}>
+        <PressableButton
+          customizedStyle={{ borderRadius: 5 }}
+          buttonPressed={sendInformation}
+        >
           <Text style={styles.buttonText}>Submit</Text>
         </PressableButton>
       </View>
