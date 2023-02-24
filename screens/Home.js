@@ -25,10 +25,6 @@ export default function Home({ navigation }) {
           height: 60,
           paddingBottom: 10,
         },
-        //buttonPressed,
-        // customizedStyle,
-        // pressedStyle,
-        // children,
         headerRight: () => {
           return (
             <PressableButton
