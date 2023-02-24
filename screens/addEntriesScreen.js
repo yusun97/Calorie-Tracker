@@ -5,7 +5,7 @@ import Input from "../components/Input";
 
 export default function AddEntriesScreen() {
   return (
-    <View styles={commonStyle.generalContainer}>
+    <View style={commonStyle.generalContainer}>
       <Input />
     </View>
   );
