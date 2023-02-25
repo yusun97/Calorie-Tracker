@@ -11,16 +11,11 @@ export default function MealItem({ description, calories, onMealPressed }) {
       buttonPressed={onMealPressed}
     >
       {/* <Card customizedStyle={styles.container}> */}
-      <Text
-        style={{ color: "rgb(219,211,242)", fontSize: 20, fontWeight: "500" }}
-      >
-        {description}
-      </Text>
+      <Text style={styles.descriptionText}>{description}</Text>
       <View style={{ flexDirection: "row" }}>
-        {/* return ({calories > 500} && */}
-        <Entypo name="warning" size={23} color="yellow" />
+        {calories > 500 && <Entypo name="warning" size={23} color="yellow" />}
         <View style={styles.caloriesContainer}>
-          <Text style={styles.textStyle}>{calories}</Text>
+          <Text style={styles.caloriesText}>{calories}</Text>
         </View>
       </View>
       {/* </Card> */}
@@ -47,9 +42,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     // margin: 1,
   },
-  textStyle: {
+  caloriesText: {
     color: "rgb(64,70,146)",
     fontWeight: "700",
     fontSize: 18,
+  },
+  descriptionText: {
+    color: "rgb(219,211,242)",
+    fontSize: 20,
+    fontWeight: "500",
   },
 });

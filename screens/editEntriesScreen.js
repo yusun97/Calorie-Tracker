@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: "rgb(64,70,146)",
-    fontWeight: "700",
+    fontWeight: "600",
     fontSize: 24,
     padding: 5,
   },

@@ -5,7 +5,7 @@ import MealItem from "../components/MealItem";
 
 export default function OverLimitEntriesScreen({ navigation }) {
   let des = "breakfast";
-  let cal = 300;
+  let cal = 800;
   function mealPressed() {
     navigation.navigate("EditEntries");
   }
