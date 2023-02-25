@@ -25,7 +25,6 @@ export default function MealItem({ description, calories, onMealPressed }) {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: "rgb(64,70,146)",
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 20,
@@ -40,7 +39,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems: "center",
     justifyContent: "center",
-    // margin: 1,
   },
   caloriesText: {
     color: "rgb(64,70,146)",

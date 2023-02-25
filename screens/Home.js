@@ -10,8 +10,8 @@ import { useState } from "react";
 
 const Tab = createBottomTabNavigator();
 
-export default function Home({ navigation }) {
-
+export default function Home({ navigation, route }) {
+  console.log(route);
   return (
     <Tab.Navigator
       screenOptions={{
