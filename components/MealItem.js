@@ -20,15 +20,7 @@ export default function MealItem({ description, calories, onMealPressed }) {
         {/* return ({calories > 500} && */}
         <Entypo name="warning" size={23} color="yellow" />
         <View style={styles.caloriesContainer}>
-          <Text
-            style={{
-              color: "rgb(64,70,146)",
-              fontWeight: "700",
-              fontSize: 18,
-            }}
-          >
-            {calories}
-          </Text>
+          <Text style={styles.textStyle}>{calories}</Text>
         </View>
       </View>
       {/* </Card> */}
@@ -54,5 +46,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     // margin: 1,
+  },
+  textStyle: {
+    color: "rgb(64,70,146)",
+    fontWeight: "700",
+    fontSize: 18,
   },
 });
