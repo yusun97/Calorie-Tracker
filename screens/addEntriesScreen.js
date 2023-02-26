@@ -8,6 +8,8 @@ import { firestore } from "../firebase/firebase-setup";
 import { writeToDBAll, writeToDBOver } from "../firebase/firebaseHelper";
 
 export default function AddEntriesScreen({ navigation }) {
+  const [limit, setLimit] = useState(500);
+
   function onMealEntered(changedCalories, changedDescription) {
     const newMeal = {
       calories: changedCalories,
@@ -15,7 +17,7 @@ export default function AddEntriesScreen({ navigation }) {
     };
     writeToDBAll(newMeal);
 
-    if (changedCalories > 500) {
+    if (changedCalories > limit) {
       writeToDBOver(newMeal);
     }
 

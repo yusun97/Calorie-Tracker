@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { Entypo } from "@expo/vector-icons";
 import Card from "../components/Card";
 import PressableButton from "./PressableButton";
 
 export default function MealItem({ mealEntry, onMealPressed }) {
+  const [limit, setLimit] = useState(500);
   return (
     <PressableButton
       customizedStyle={styles.container}
@@ -13,7 +14,7 @@ export default function MealItem({ mealEntry, onMealPressed }) {
       {/* <Card customizedStyle={styles.container}> */}
       <Text style={styles.descriptionText}>{mealEntry.description}</Text>
       <View style={{ flexDirection: "row" }}>
-        {mealEntry.calories > 500 && (
+        {mealEntry.calories > limit && (
           <Entypo name="warning" size={23} color="yellow" />
         )}
         <View style={styles.caloriesContainer}>
