@@ -4,18 +4,20 @@ import { Entypo } from "@expo/vector-icons";
 import Card from "../components/Card";
 import PressableButton from "./PressableButton";
 
-export default function MealItem({ description, calories, onMealPressed }) {
+export default function MealItem({ mealEntry, onMealPressed }) {
   return (
     <PressableButton
       customizedStyle={styles.container}
       buttonPressed={onMealPressed}
     >
       {/* <Card customizedStyle={styles.container}> */}
-      <Text style={styles.descriptionText}>{description}</Text>
+      <Text style={styles.descriptionText}>{mealEntry.description}</Text>
       <View style={{ flexDirection: "row" }}>
-        {calories > 500 && <Entypo name="warning" size={23} color="yellow" />}
+        {mealEntry.calories > 500 && (
+          <Entypo name="warning" size={23} color="yellow" />
+        )}
         <View style={styles.caloriesContainer}>
-          <Text style={styles.caloriesText}>{calories}</Text>
+          <Text style={styles.caloriesText}>{mealEntry.calories}</Text>
         </View>
       </View>
       {/* </Card> */}

@@ -12,6 +12,19 @@ const Tab = createBottomTabNavigator();
 
 export default function Home({ navigation, route }) {
   console.log(route);
+  const [meals, setMeals] = useState([]);
+
+  function onMealEntered(changedCalories, changedDescription) {
+    const newMeal = {
+      calories: changedCalories,
+      description: changedDescription,
+      id: Math.random(),
+    };
+    setMeals((prevMeals) => {
+      return [...prevMeals, newMeal];
+    });
+  }
+
   return (
     <Tab.Navigator
       screenOptions={{
