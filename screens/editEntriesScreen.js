@@ -1,25 +1,42 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Alert } from "react-native";
 import React from "react";
 import { commonStyle } from "../components/CommonStyle";
 import Card from "../components/Card";
 import PressableButton from "../components/PressableButton";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import { firestore } from "../firebase/firebase-setup";
-import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { updateEntriesToDB, deleteFromDB } from "../firebase/firebaseHelper";
 
 export default function EditEntriesScreen({ navigation, route }) {
   // console.log(route.params.editedMeal.id);
-
   function deleteEntries() {
-    deleteFromDB(route.params.editedMeal.id);
-    navigation.navigate("Home");
+    Alert.alert("Delete", "Are you sure you want to delete this?", [
+      { text: "No", style: "cancel" },
+      {
+        text: "Yes",
+        onPress: () => {
+          deleteFromDB(route.params.editedMeal.id);
+          navigation.navigate("Home");
+        },
+      },
+    ]);
   }
 
   function updateReviewStatus() {
-    updateEntriesToDB(route.params.editedMeal.id);
-    navigation.navigate("Home");
+    Alert.alert(
+      "Important",
+      "Are you sure you want to mark the item as reviewed?",
+      [
+        { text: "No", style: "cancel" },
+        {
+          text: "Yes",
+          onPress: () => {
+            updateEntriesToDB(route.params.editedMeal.id);
+            navigation.navigate("Home");
+          },
+        },
+      ]
+    );
   }
 
   return (
