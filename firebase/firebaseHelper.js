@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { firestore } from "./firebase-setup";
-import { collection } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 export async function writeToDB(data) {
   try {
