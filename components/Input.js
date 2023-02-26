@@ -4,7 +4,7 @@ import { useState } from "react";
 import { commonStyle } from "./CommonStyle";
 import PressableButton from "./PressableButton";
 
-export default function Input({ backToHomeHandle }) {
+export default function Input({ mealEntered }) {
   const [calories, setCalories] = useState("");
   const [description, setDescription] = useState("");
 
@@ -22,7 +22,8 @@ export default function Input({ backToHomeHandle }) {
   }
 
   function sendInformation() {
-    backToHomeHandle(calories, description);
+    mealEntered(calories, description);
+    // backToHomeHandle(calories, description);
     resetInformation();
   }
 

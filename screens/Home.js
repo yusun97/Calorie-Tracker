@@ -11,19 +11,19 @@ import { useState } from "react";
 const Tab = createBottomTabNavigator();
 
 export default function Home({ navigation, route }) {
-  console.log(route);
-  const [meals, setMeals] = useState([]);
+  // console.log(route);
+  // const [meals, setMeals] = useState([{ des: "lunch", cal: 600 }]);
 
-  function onMealEntered(changedCalories, changedDescription) {
-    const newMeal = {
-      calories: changedCalories,
-      description: changedDescription,
-      id: Math.random(),
-    };
-    setMeals((prevMeals) => {
-      return [...prevMeals, newMeal];
-    });
-  }
+  // function onMealEntered(changedCalories, changedDescription) {
+  //   const newMeal = {
+  //     calories: changedCalories,
+  //     description: changedDescription,
+  //     id: Math.random(),
+  //   };
+  //   setMeals((prevMeals) => {
+  //     return [...prevMeals, newMeal];
+  //   });
+  // }
 
   return (
     <Tab.Navigator
@@ -43,7 +43,10 @@ export default function Home({ navigation, route }) {
           return (
             <PressableButton
               buttonPressed={() => {
-                navigation.navigate("AddEntries");
+                navigation.navigate("AddEntries", {
+                  des: "breackfast",
+                  calories: 50,
+                });
               }}
               customizedStyle={{ padding: 10 }}
             >

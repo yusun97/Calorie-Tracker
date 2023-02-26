@@ -4,19 +4,43 @@ import { commonStyle } from "../components/CommonStyle";
 import Input from "../components/Input";
 import { useState } from "react";
 
-export default function AddEntriesScreen({ navigation }) {
-  function backToHome(changedCalories, changedDescription) {
-    console.log("inside" + changedCalories);
-    console.log("inside" + changedDescription);
-    navigation.navigate("Home", {
+export default function AddEntriesScreen({ navigation, route }) {
+  // console.log(route);
+  const [meals, setMeals] = useState([]);
+
+  function onMealEntered(changedCalories, changedDescription) {
+    const newMeal = {
       calories: changedCalories,
       description: changedDescription,
+      id: Math.random(),
+    };
+
+    setMeals((prevMeals) => {
+      // console.log("previous meal");
+      // console.log(prevMeals);
+      return [...prevMeals, newMeal];
     });
+
+    // console.log(newMeal);
+    // console.log(meals);
+    backToHome();
+  }
+
+  function backToHome() {
+    // console.log("inside" + changedCalories);
+    // console.log("inside" + changedDescription);
+    // navigation.navigate("Home", {
+    //   calories: changedCalories,
+    //   description: changedDescription,
+    // });
+    // navigation.navigate("Home", { mealEntries: meals });
+    console.log(meals);
+    navigation.navigate("Home");
   }
 
   return (
     <View style={commonStyle.generalContainer}>
-      <Input backToHomeHandle={backToHome} />
+      <Input mealEntered={onMealEntered} />
     </View>
   );
 }
