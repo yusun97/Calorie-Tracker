@@ -1,8 +1,9 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { commonStyle } from "../components/CommonStyle";
 import Input from "../components/Input";
 import { useState } from "react";
+import { writeToDB } from "../firebase/firebaseHelper";
 
 export default function AddEntriesScreen({ navigation, route }) {
   // console.log(route);
@@ -13,12 +14,13 @@ export default function AddEntriesScreen({ navigation, route }) {
     const newMeal = {
       calories: changedCalories,
       description: changedDescription,
-      id: Math.random(),
     };
 
-    navigation.navigate("Home", {
-      newMeal: newMeal,
-    });
+    writeToDB(newMeal);
+
+    // navigation.navigate("Home", {
+    //   newMeal: newMeal,
+    // });
     // setMeals((prevMeals) => {
     //   console.log("previous meal");
     //   console.log(prevMeals);
