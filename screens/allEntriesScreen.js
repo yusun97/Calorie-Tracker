@@ -7,7 +7,7 @@ import EntriesList from "../components/EntriesList";
 export default function AllEntriesScreen({ navigation }) {
   function mealPressedHandle(mealEntry) {
     navigation.navigate("EditEntries", {
-      // type: "allEntries",
+      type: "allEntries",
       editedMeal: mealEntry,
     });
   }

@@ -8,7 +8,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { updateEntriesToDB, deleteFromDB } from "../firebase/firebaseHelper";
 
 export default function EditEntriesScreen({ navigation, route }) {
-  // console.log(route.params.editedMeal.id);
+  // console.log(route.params.type);
   function deleteEntries() {
     Alert.alert("Delete", "Are you sure you want to delete this?", [
       { text: "No", style: "cancel" },
@@ -16,7 +16,7 @@ export default function EditEntriesScreen({ navigation, route }) {
         text: "Yes",
         onPress: () => {
           deleteFromDB(route.params.editedMeal.id);
-          navigation.navigate("Home");
+          navigation.navigate(route.params.type);
         },
       },
     ]);
@@ -32,7 +32,7 @@ export default function EditEntriesScreen({ navigation, route }) {
           text: "Yes",
           onPress: () => {
             updateEntriesToDB(route.params.editedMeal.id);
-            navigation.navigate("Home");
+            navigation.navigate(route.params.type);
           },
         },
       ]

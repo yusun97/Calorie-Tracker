@@ -11,7 +11,7 @@ export default function AddEntriesScreen({ navigation }) {
   const [limit, setLimit] = useState(500);
 
   function onMealEntered(changedCalories, changedDescription) {
-    if (changedCalories > 500) {
+    if (changedCalories > limit) {
       const newMeal = {
         calories: changedCalories,
         description: changedDescription,
