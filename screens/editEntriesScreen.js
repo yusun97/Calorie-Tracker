@@ -5,9 +5,23 @@ import Card from "../components/Card";
 import PressableButton from "../components/PressableButton";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import { firestore } from "../firebase/firebase-setup";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { updateEntriesToDB, deleteFromDB } from "../firebase/firebaseHelper";
 
-export default function EditEntriesScreen({ route }) {
-  // console.log(route.params.editedMeal.review);
+export default function EditEntriesScreen({ navigation, route }) {
+  // console.log(route.params.editedMeal.id);
+
+  function deleteEntries() {
+    deleteFromDB(route.params.editedMeal.id);
+    navigation.navigate("Home");
+  }
+
+  function updateReviewStatus() {
+    updateEntriesToDB(route.params.editedMeal.id);
+    navigation.navigate("Home");
+  }
+
   return (
     <View style={commonStyle.generalContainer}>
       <Card customizedStyle={styles.container}>
@@ -18,7 +32,10 @@ export default function EditEntriesScreen({ route }) {
           Description: {route.params.editedMeal.description}
         </Text>
         <View style={styles.buttonContainer}>
-          <PressableButton customizedStyle={styles.buttonStyle}>
+          <PressableButton
+            customizedStyle={styles.buttonStyle}
+            buttonPressed={deleteEntries}
+          >
             <MaterialCommunityIcons
               name="trash-can-outline"
               size={30}
@@ -26,7 +43,10 @@ export default function EditEntriesScreen({ route }) {
             />
           </PressableButton>
           {!route.params.editedMeal.review && (
-            <PressableButton customizedStyle={styles.buttonStyle}>
+            <PressableButton
+              customizedStyle={styles.buttonStyle}
+              buttonPressed={updateReviewStatus}
+            >
               <AntDesign name="check" size={30} color="white" />
             </PressableButton>
           )}

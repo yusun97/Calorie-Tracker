@@ -1,7 +1,13 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { firestore } from "./firebase-setup";
-import { collection, addDoc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 export async function writeToDB(data) {
   try {
@@ -13,7 +19,17 @@ export async function writeToDB(data) {
 
 export async function deleteFromDB(deletedID) {
   try {
-    await deleteDoc(doc(firestore, "allEntries", deletedID));
+    await deleteDoc(doc(firestore, "entries", deletedID));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function updateEntriesToDB(updatedID) {
+  // console.log("update work");
+  const updateEntries = doc(firestore, "entries", updatedID);
+  try {
+    await updateDoc(updateEntries, { review: true });
   } catch (error) {
     console.log(error);
   }

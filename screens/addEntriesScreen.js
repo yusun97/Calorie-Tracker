@@ -5,7 +5,7 @@ import Input from "../components/Input";
 import { useState } from "react";
 import { collection, onSnapshot } from "firebase/firestore";
 import { firestore } from "../firebase/firebase-setup";
-import { writeToDB, writeToDBOver } from "../firebase/firebaseHelper";
+import { writeToDB } from "../firebase/firebaseHelper";
 
 export default function AddEntriesScreen({ navigation }) {
   const [limit, setLimit] = useState(500);
