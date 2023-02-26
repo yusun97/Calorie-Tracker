@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View, BlurView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -7,24 +7,13 @@ import OverLimitEntriesScreen from "./OverLimitEntriesScreen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PressableButton from "../components/PressableButton";
 import { useState } from "react";
+import { firestore } from "../firebase/firebase-setup";
+import { collection, onSnapshot } from "firebase/firestore";
 
 const Tab = createBottomTabNavigator();
 
 export default function Home({ navigation, route }) {
-  console.log(route);
-  // const [meals, setMeals] = useState([{ des: "lunch", cal: 600 }]);
-
-  // function onMealEntered(changedCalories, changedDescription) {
-  //   const newMeal = {
-  //     calories: changedCalories,
-  //     description: changedDescription,
-  //     id: Math.random(),
-  //   };
-  //   setMeals((prevMeals) => {
-  //     return [...prevMeals, newMeal];
-  //   });
-  // }
-
+  
   return (
     <Tab.Navigator
       screenOptions={{
@@ -43,10 +32,7 @@ export default function Home({ navigation, route }) {
           return (
             <PressableButton
               buttonPressed={() => {
-                navigation.navigate("AddEntries", {
-                  des: "breackfast",
-                  calories: 50,
-                });
+                navigation.navigate("AddEntries");
               }}
               customizedStyle={{ padding: 10 }}
             >
