@@ -14,7 +14,7 @@ export default function AllEntriesScreen({ navigation }) {
 
   return (
     <View style={commonStyle.generalContainer}>
-      <EntriesList mealPressed={mealPressedHandle} type={"allEntries"} />
+      <EntriesList mealPressed={mealPressedHandle} />
     </View>
   );
 }

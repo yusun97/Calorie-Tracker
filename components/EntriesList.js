@@ -5,11 +5,11 @@ import MealItem from "./MealItem";
 import { firestore } from "../firebase/firebase-setup";
 import { collection, onSnapshot } from "firebase/firestore";
 
-export default function EntriesList({ mealPressed, type }) {
+export default function EntriesList({ mealPressed }) {
   const [meals, setMeals] = useState([]);
   useEffect(() => {
     const unsubscribe = onSnapshot(
-      collection(firestore, type),
+      collection(firestore, "entries"),
       (querySnapshot) => {
         if (querySnapshot.empty) {
           setMeals([]);

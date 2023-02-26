@@ -24,7 +24,7 @@ export default function EditEntriesScreen({ route }) {
               color="white"
             />
           </PressableButton>
-          {route.params.type === "overLimitEntries" && (
+          {true && (
             <PressableButton customizedStyle={styles.buttonStyle}>
               <AntDesign name="check" size={30} color="white" />
             </PressableButton>
