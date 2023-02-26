@@ -6,8 +6,11 @@ import EntriesList from "../components/EntriesList";
 import { useState } from "react";
 
 export default function OverLimitEntriesScreen({ navigation }) {
-  function mealPressedHandle() {
-    navigation.navigate("EditEntries", { type: "overLimitEntries" });
+  function mealPressedHandle(mealEntry) {
+    navigation.navigate("EditEntries", {
+      type: "overLimitEntries",
+      editedMeal: mealEntry,
+    });
   }
 
   return (

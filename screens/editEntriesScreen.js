@@ -7,14 +7,15 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
 export default function EditEntriesScreen({ route }) {
-  let calories = 560;
-  let description = "Breakfast";
-  // console.log(route.params.type);
   return (
     <View style={commonStyle.generalContainer}>
       <Card customizedStyle={styles.container}>
-        <Text style={styles.textStyle}>Calories: {calories}</Text>
-        <Text style={styles.textStyle}>Description: {description}</Text>
+        <Text style={styles.textStyle}>
+          Calories: {route.params.editedMeal.calories}
+        </Text>
+        <Text style={styles.textStyle}>
+          Description: {route.params.editedMeal.description}
+        </Text>
         <View style={styles.buttonContainer}>
           <PressableButton customizedStyle={styles.buttonStyle}>
             <MaterialCommunityIcons

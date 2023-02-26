@@ -5,8 +5,11 @@ import Card from "../components/Card";
 import EntriesList from "../components/EntriesList";
 
 export default function AllEntriesScreen({ navigation }) {
-  function mealPressedHandle() {
-    navigation.navigate("EditEntries", { type: "allEntries" });
+  function mealPressedHandle(mealEntry) {
+    navigation.navigate("EditEntries", {
+      type: "allEntries",
+      editedMeal: mealEntry,
+    });
   }
 
   return (

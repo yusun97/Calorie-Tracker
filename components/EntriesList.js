@@ -31,9 +31,7 @@ export default function EntriesList({ mealPressed, type }) {
     <FlatList
       data={meals}
       renderItem={({ item }) => {
-        return (
-          <MealItem mealEntry={item} onMealPressed={mealPressed} type={type} />
-        );
+        return <MealItem mealEntry={item} onMealPressed={mealPressed} />;
       }}
     />
   );
