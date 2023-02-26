@@ -6,14 +6,13 @@ import Card from "../components/Card";
 import MealItem from "../components/MealItem";
 import EntriesList from "../components/EntriesList";
 
-export default function AllEntriesScreen() {
+export default function AllEntriesScreen({ navigation }) {
+  function mealPressedHandle() {
+    navigation.navigate("EditEntries");
+  }
   return (
     <View style={commonStyle.generalContainer}>
-      {/* <FlatList/> */}
-      {/* <MealItem /> */}
-      <Card>
-        <Text>allEntriesScreen</Text>
-      </Card>
+      <EntriesList mealPressed={mealPressedHandle} type={"allEntries"} />
     </View>
   );
 }
