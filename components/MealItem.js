@@ -8,34 +8,37 @@ export default function MealItem({ mealEntry, onMealPressed }) {
   const [limit, setLimit] = useState(500);
   // console.log(mealEntry);
   return (
-    <PressableButton
-      customizedStyle={styles.container}
-      buttonPressed={() => {
-        return onMealPressed(mealEntry);
-      }}
-    >
-      {/* <Card customizedStyle={styles.container}> */}
-      <Text style={styles.descriptionText}>{mealEntry.description}</Text>
-      <View style={{ flexDirection: "row" }}>
-        {!mealEntry.review && (
-          <Entypo name="warning" size={23} color="yellow" />
-        )}
-        <View style={styles.caloriesContainer}>
-          <Text style={styles.caloriesText}>{mealEntry.calories}</Text>
-        </View>
-      </View>
-      {/* </Card> */}
-    </PressableButton>
+    <View style={{ margin: 10 }}>
+      <PressableButton
+        customizedStyle={{ backgroundColor: "rgb(126,125,189)" }}
+        buttonPressed={() => {
+          return onMealPressed(mealEntry);
+        }}
+      >
+        <Card customizedStyle={styles.cardContainer}>
+          <Text style={styles.descriptionText}>{mealEntry.description}</Text>
+
+          <View style={{ flexDirection: "row" }}>
+            {!mealEntry.review && (
+              <Entypo name="warning" size={23} color="yellow" />
+            )}
+
+            <View style={styles.caloriesContainer}>
+              <Text style={styles.caloriesText}>{mealEntry.calories}</Text>
+            </View>
+          </View>
+        </Card>
+      </PressableButton>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  cardContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 20,
-    margin: 20,
-    borderRadius: 5,
+    backgroundColor: "rgb(64,70,146)",
   },
   caloriesContainer: {
     backgroundColor: "white",

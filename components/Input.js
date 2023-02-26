@@ -75,7 +75,12 @@ export default function Input({ mealEntered }) {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 10, paddingTop: 70 },
+  container: {
+    padding: 10,
+    paddingTop: 70,
+    margin: 10,
+    // borderWidth: 10,
+  },
   text: {
     color: "rgb(64,70,146)",
     fontWeight: "bold",
@@ -88,8 +93,8 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    padding: 30,
+    justifyContent: "space-between",
+    margin: 20,
   },
   buttonText: {
     color: "white",
@@ -102,14 +107,14 @@ const styles = StyleSheet.create({
     backgroundColor: "rgb(152,152,221)",
     borderRadius: 5,
     height: 30,
-    width: 280,
-    padding: 2,
+    width: 200,
+    // padding: 2,
   },
   bigTextContainer: {
     backgroundColor: "rgb(152,152,221)",
     borderRadius: 5,
-    height: 180,
-    width: 280,
-    padding: 2,
+    height: 160,
+    width: 200,
+    // padding: 2,
   },
 });
