@@ -6,9 +6,10 @@ import PressableButton from "../components/PressableButton";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function EditEntriesScreen() {
+export default function EditEntriesScreen({ route }) {
   let calories = 560;
   let description = "Breakfast";
+  // console.log(route.params.type);
   return (
     <View style={commonStyle.generalContainer}>
       <Card customizedStyle={styles.container}>
@@ -22,9 +23,11 @@ export default function EditEntriesScreen() {
               color="white"
             />
           </PressableButton>
-          <PressableButton customizedStyle={styles.buttonStyle}>
-            <AntDesign name="check" size={30} color="white" />
-          </PressableButton>
+          {route.params.type === "overLimitEntries" && (
+            <PressableButton customizedStyle={styles.buttonStyle}>
+              <AntDesign name="check" size={30} color="white" />
+            </PressableButton>
+          )}
         </View>
       </Card>
     </View>

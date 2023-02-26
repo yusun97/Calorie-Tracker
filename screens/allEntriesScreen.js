@@ -6,8 +6,9 @@ import EntriesList from "../components/EntriesList";
 
 export default function AllEntriesScreen({ navigation }) {
   function mealPressedHandle() {
-    navigation.navigate("EditEntries");
+    navigation.navigate("EditEntries", { type: "allEntries" });
   }
+
   return (
     <View style={commonStyle.generalContainer}>
       <EntriesList mealPressed={mealPressedHandle} type={"allEntries"} />

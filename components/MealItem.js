@@ -4,8 +4,9 @@ import { Entypo } from "@expo/vector-icons";
 import Card from "../components/Card";
 import PressableButton from "./PressableButton";
 
-export default function MealItem({ mealEntry, onMealPressed }) {
+export default function MealItem({ mealEntry, onMealPressed, type }) {
   const [limit, setLimit] = useState(500);
+
   return (
     <PressableButton
       customizedStyle={styles.container}

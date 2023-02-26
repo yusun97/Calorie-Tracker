@@ -19,6 +19,14 @@ export async function writeToDBOver(data) {
   }
 }
 
+export async function deleteFromDBALl(deletedID) {
+  try {
+    await deleteDoc(doc(firestore, "allEntries", deletedID));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function deleteFromDBOver(deletedID) {
   try {
     await deleteDoc(doc(firestore, "overLimitEntries", deletedID));
