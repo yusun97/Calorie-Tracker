@@ -15,7 +15,7 @@ export default function OverLimitEntriesScreen({ navigation }) {
 
   return (
     <View style={commonStyle.generalContainer}>
-      <EntriesList mealPressed={mealPressedHandle} />
+      <EntriesList mealPressed={mealPressedHandle} type="overLimitEntries" />
     </View>
   );
 }

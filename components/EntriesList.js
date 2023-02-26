@@ -3,25 +3,28 @@ import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 import MealItem from "./MealItem";
 import { firestore } from "../firebase/firebase-setup";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 
-export default function EntriesList({ mealPressed }) {
+export default function EntriesList({ mealPressed, type }) {
   const [meals, setMeals] = useState([]);
+
   useEffect(() => {
-    const unsubscribe = onSnapshot(
-      collection(firestore, "entries"),
-      (querySnapshot) => {
-        if (querySnapshot.empty) {
-          setMeals([]);
-        } else {
-          let mealsFromDB = [];
-          querySnapshot.docs.forEach((snapDoc) => {
-            mealsFromDB.push({ ...snapDoc.data(), id: snapDoc.id });
-          });
-          setMeals(mealsFromDB);
-        }
+    const q =
+      type === "overLimitEntries"
+        ? query(collection(firestore, "entries"), where("review", "==", false))
+        : collection(firestore, "entries");
+
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      if (querySnapshot.empty) {
+        setMeals([]);
+      } else {
+        let mealsFromDB = [];
+        querySnapshot.docs.forEach((snapDoc) => {
+          mealsFromDB.push({ ...snapDoc.data(), id: snapDoc.id });
+        });
+        setMeals(mealsFromDB);
       }
-    );
+    });
     return () => {
       unsubscribe();
     };
