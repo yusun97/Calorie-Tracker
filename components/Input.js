@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput, StyleSheet, Alert } from "react-native";
 import React from "react";
 import { useState } from "react";
 import { commonStyle } from "./CommonStyle";
@@ -21,9 +21,18 @@ export default function Input({ mealEntered }) {
     setDescription("");
   }
 
+  function validate() {
+    if (calories.length === 0 || isNaN(calories) || description.length === 0) {
+      Alert.alert("Invalid input", "Please check your input values", [
+        { text: "OK", style: "cancel" },
+      ]);
+    } else {
+      sendInformation();
+    }
+  }
+
   function sendInformation() {
     mealEntered(calories, description);
-    // backToHomeHandle(calories, description);
     resetInformation();
   }
 
@@ -56,7 +65,7 @@ export default function Input({ mealEntered }) {
         </PressableButton>
         <PressableButton
           customizedStyle={{ borderRadius: 5 }}
-          buttonPressed={sendInformation}
+          buttonPressed={validate}
         >
           <Text style={styles.buttonText}>Submit</Text>
         </PressableButton>
