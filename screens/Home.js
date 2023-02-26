@@ -11,7 +11,7 @@ import { useState } from "react";
 const Tab = createBottomTabNavigator();
 
 export default function Home({ navigation, route }) {
-  // console.log(route);
+  console.log(route);
   // const [meals, setMeals] = useState([{ des: "lunch", cal: 600 }]);
 
   // function onMealEntered(changedCalories, changedDescription) {
