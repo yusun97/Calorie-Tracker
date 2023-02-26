@@ -7,6 +7,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
 export default function EditEntriesScreen({ route }) {
+  // console.log(route.params.editedMeal.review);
   return (
     <View style={commonStyle.generalContainer}>
       <Card customizedStyle={styles.container}>
@@ -24,7 +25,7 @@ export default function EditEntriesScreen({ route }) {
               color="white"
             />
           </PressableButton>
-          {true && (
+          {!route.params.editedMeal.review && (
             <PressableButton customizedStyle={styles.buttonStyle}>
               <AntDesign name="check" size={30} color="white" />
             </PressableButton>

@@ -6,7 +6,7 @@ import PressableButton from "./PressableButton";
 
 export default function MealItem({ mealEntry, onMealPressed }) {
   const [limit, setLimit] = useState(500);
-
+  // console.log(mealEntry);
   return (
     <PressableButton
       customizedStyle={styles.container}
@@ -17,7 +17,7 @@ export default function MealItem({ mealEntry, onMealPressed }) {
       {/* <Card customizedStyle={styles.container}> */}
       <Text style={styles.descriptionText}>{mealEntry.description}</Text>
       <View style={{ flexDirection: "row" }}>
-        {mealEntry.calories > limit && (
+        {!mealEntry.review && (
           <Entypo name="warning" size={23} color="yellow" />
         )}
         <View style={styles.caloriesContainer}>

@@ -20,6 +20,7 @@ export default function EntriesList({ mealPressed, type }) {
       } else {
         let mealsFromDB = [];
         querySnapshot.docs.forEach((snapDoc) => {
+          // console.log(snapDoc.data());
           mealsFromDB.push({ ...snapDoc.data(), id: snapDoc.id });
         });
         setMeals(mealsFromDB);
