@@ -1,7 +1,7 @@
 import { View, Text, TextInput, StyleSheet, Alert } from "react-native";
 import React from "react";
 import { useState } from "react";
-import { commonStyle, lightPurple, darkPurple } from "./CommonStyle";
+import { commonStyle, lightPurple, darkPurple, white } from "./CommonStyle";
 import PressableButton from "./PressableButton";
 
 export default function Input({ mealEntered }) {
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   buttonText: {
-    color: "white",
+    color: white,
     fontSize: 15,
     padding: 10,
     marginLeft: 30,

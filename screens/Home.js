@@ -5,15 +5,7 @@ import AllEntriesScreen from "./AllEntriesScreen";
 import OverLimitEntriesScreen from "./OverLimitEntriesScreen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PressableButton from "../components/PressableButton";
-import {
-  purple,
-  lightPurple,
-  darkPurple,
-  pink,
-  white,
-  yellow,
-  orange,
-} from "../components/CommonStyle";
+import { darkPurple, white, orange } from "../components/CommonStyle";
 
 const Tab = createBottomTabNavigator();
 

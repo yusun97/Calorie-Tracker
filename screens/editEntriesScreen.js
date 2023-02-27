@@ -6,15 +6,7 @@ import PressableButton from "../components/PressableButton";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { updateEntriesToDB, deleteFromDB } from "../firebase/firebaseHelper";
-import {
-  purple,
-  lightPurple,
-  darkPurple,
-  pink,
-  white,
-  yellow,
-  orange,
-} from "../components/CommonStyle";
+import { darkPurple, white } from "../components/CommonStyle";
 
 export default function EditEntriesScreen({ navigation, route }) {
   // console.log(route.params.type);

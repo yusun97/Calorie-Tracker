@@ -3,14 +3,7 @@ import React from "react";
 import { Entypo } from "@expo/vector-icons";
 import Card from "../components/Card";
 import PressableButton from "./PressableButton";
-import {
-  purple,
-  lightPurple,
-  darkPurple,
-  pink,
-  white,
-  yellow,
-} from "./CommonStyle";
+import { darkPurple, pink, white, yellow } from "./CommonStyle";
 
 export default function MealItem({ mealEntry, onMealPressed }) {
   // console.log(mealEntry);
