@@ -5,6 +5,7 @@ export const purple = "rgb(126,125,189)";
 export const darkPurple = "rgb(64,70,146)";
 export const lightPurple = "rgb(150,150,219)";
 export const white = "#fff";
+export const shadowColor = "rgba(96,96,96,1)";
 
 export const commonStyle = StyleSheet.create({
   generalContainer: {

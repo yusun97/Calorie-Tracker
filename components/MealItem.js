@@ -10,7 +10,6 @@ export default function MealItem({ mealEntry, onMealPressed }) {
   return (
     <View style={{ margin: 10 }}>
       <PressableButton
-        customizedStyle={{ backgroundColor: "rgb(126,125,189)" }}
         buttonPressed={() => {
           return onMealPressed(mealEntry);
         }}

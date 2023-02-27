@@ -1,7 +1,7 @@
 import { View, Text, TextInput, StyleSheet, Alert } from "react-native";
 import React from "react";
 import { useState } from "react";
-import { commonStyle } from "./CommonStyle";
+import { commonStyle, lightPurple, darkPurple } from "./CommonStyle";
 import PressableButton from "./PressableButton";
 
 export default function Input({ mealEntered }) {
@@ -57,16 +57,10 @@ export default function Input({ mealEntered }) {
       </View>
 
       <View style={styles.buttonContainer}>
-        <PressableButton
-          customizedStyle={{ borderRadius: 5 }}
-          buttonPressed={resetInformation}
-        >
+        <PressableButton buttonPressed={resetInformation}>
           <Text style={styles.buttonText}>Reset</Text>
         </PressableButton>
-        <PressableButton
-          customizedStyle={{ borderRadius: 5 }}
-          buttonPressed={validate}
-        >
+        <PressableButton buttonPressed={validate}>
           <Text style={styles.buttonText}>Submit</Text>
         </PressableButton>
       </View>
@@ -82,9 +76,9 @@ const styles = StyleSheet.create({
     // borderWidth: 10,
   },
   text: {
-    color: "rgb(64,70,146)",
+    color: darkPurple,
     fontWeight: "bold",
-    fontSize: 17,
+    fontSize: 20,
   },
   rowContainer: {
     flexDirection: "row",
@@ -104,17 +98,15 @@ const styles = StyleSheet.create({
     marginRight: 30,
   },
   smallTextContainer: {
-    backgroundColor: "rgb(152,152,221)",
+    backgroundColor: lightPurple,
     borderRadius: 5,
     height: 30,
     width: 200,
-    // padding: 2,
   },
   bigTextContainer: {
-    backgroundColor: "rgb(152,152,221)",
+    backgroundColor: lightPurple,
     borderRadius: 5,
     height: 160,
     width: 200,
-    // padding: 2,
   },
 });

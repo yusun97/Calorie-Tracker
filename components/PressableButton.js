@@ -24,6 +24,6 @@ export default function PressableButton({
 }
 
 const styles = StyleSheet.create({
-  pressableDefault: { backgroundColor: "rgb(64,70,146)" },
+  pressableDefault: { backgroundColor: "rgb(64,70,146)", borderRadius: 5 },
   pressedStyle: { opacity: 0.3 },
 });
