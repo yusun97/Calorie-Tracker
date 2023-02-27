@@ -18,6 +18,7 @@ export default function App() {
           headerTitleStyle: {
             fontSize: 20,
           },
+          headerTitleAlign: "center",
         }}
       >
         <Stack.Screen
