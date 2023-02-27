@@ -22,7 +22,12 @@ export default function Input({ mealEntered }) {
   }
 
   function validate() {
-    if (calories.length === 0 || isNaN(calories) || description.length === 0) {
+    if (
+      calories < 0 ||
+      calories.length === 0 ||
+      isNaN(calories) ||
+      description.length === 0
+    ) {
       Alert.alert("Invalid input", "Please check your input values", [
         { text: "OK", style: "cancel" },
       ]);
