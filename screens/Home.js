@@ -6,14 +6,15 @@ import AllEntriesScreen from "./AllEntriesScreen";
 import OverLimitEntriesScreen from "./OverLimitEntriesScreen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PressableButton from "../components/PressableButton";
+import { commonStyle,darkPurple } from "../components/CommonStyle";
 
 const Tab = createBottomTabNavigator();
 
-export default function Home({ navigation, route }) {
+export default function Home({ navigation}) {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: "rgb(64,70,146)", height: 90 },
+        headerStyle:  { backgroundColor: darkPurple},
         headerTintColor: "#fff",
         headerTitleStyle: {
           fontSize: 20,

@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
 import EditEntriesScreen from "./screens/EditEntriesScreen";
 import AddEntriesScreen from "./screens/AddEntriesScreen";
-import { commonStyle } from "./components/CommonStyle";
+import { commonStyle, white, darkPurple } from "./components/CommonStyle";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,8 +14,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerStyle: { backgroundColor: "rgb(64,70,146)", height: 105 },
-          headerTintColor: "#fff",
+          headerStyle: { backgroundColor: darkPurple },
+          headerTintColor: white,
           headerTitleStyle: {
             fontSize: 20,
           },
@@ -40,12 +40,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

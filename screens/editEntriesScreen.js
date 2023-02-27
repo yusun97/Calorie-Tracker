@@ -6,6 +6,7 @@ import PressableButton from "../components/PressableButton";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { updateEntriesToDB, deleteFromDB } from "../firebase/firebaseHelper";
+import { darkPurple } from "../components/CommonStyle";
 
 export default function EditEntriesScreen({ navigation, route }) {
   // console.log(route.params.type);
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textStyle: {
-    color: "rgb(64,70,146)",
+    color: darkPurple,
     fontWeight: "600",
     fontSize: 24,
     padding: 5,
