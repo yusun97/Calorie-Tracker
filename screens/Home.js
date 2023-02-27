@@ -1,27 +1,34 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { StyleSheet, Text, View, BlurView } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AllEntriesScreen from "./AllEntriesScreen";
 import OverLimitEntriesScreen from "./OverLimitEntriesScreen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PressableButton from "../components/PressableButton";
-import { commonStyle,darkPurple } from "../components/CommonStyle";
+import {
+  purple,
+  lightPurple,
+  darkPurple,
+  pink,
+  white,
+  yellow,
+  orange,
+} from "../components/CommonStyle";
 
 const Tab = createBottomTabNavigator();
 
-export default function Home({ navigation}) {
+export default function Home({ navigation }) {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerStyle:  { backgroundColor: darkPurple},
-        headerTintColor: "#fff",
+        headerStyle: { backgroundColor: darkPurple },
+        headerTintColor: white,
         headerTitleStyle: {
           fontSize: 20,
         },
-        tabBarActiveTintColor: "rgb(239,189,67)",
+        tabBarActiveTintColor: orange,
         tabBarStyle: {
-          backgroundColor: "rgb(64,70,146)",
+          backgroundColor: darkPurple,
           height: 60,
           paddingBottom: 10,
         },
@@ -33,7 +40,7 @@ export default function Home({ navigation}) {
               }}
               customizedStyle={{ padding: 10 }}
             >
-              <MaterialCommunityIcons name="plus" size={25} color="white" />
+              <MaterialCommunityIcons name="plus" size={25} color={white} />
             </PressableButton>
           );
         },

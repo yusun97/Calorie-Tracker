@@ -6,7 +6,15 @@ import PressableButton from "../components/PressableButton";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { updateEntriesToDB, deleteFromDB } from "../firebase/firebaseHelper";
-import { darkPurple } from "../components/CommonStyle";
+import {
+  purple,
+  lightPurple,
+  darkPurple,
+  pink,
+  white,
+  yellow,
+  orange,
+} from "../components/CommonStyle";
 
 export default function EditEntriesScreen({ navigation, route }) {
   // console.log(route.params.type);
@@ -57,7 +65,7 @@ export default function EditEntriesScreen({ navigation, route }) {
             <MaterialCommunityIcons
               name="trash-can-outline"
               size={30}
-              color="white"
+              color={white}
             />
           </PressableButton>
           {!route.params.editedMeal.review && (
@@ -65,7 +73,7 @@ export default function EditEntriesScreen({ navigation, route }) {
               customizedStyle={styles.buttonStyle}
               buttonPressed={updateReviewStatus}
             >
-              <AntDesign name="check" size={30} color="white" />
+              <AntDesign name="check" size={30} color={white} />
             </PressableButton>
           )}
         </View>
@@ -92,12 +100,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   buttonStyle: {
-    paddingLeft: 24,
-    paddingRight: 24,
+    paddingLeft: 25,
+    paddingRight: 25,
     padding: 12,
     margin: 20,
-    marginLeft: 20,
-    marginRight: 20,
-    borderRadius: 5,
   },
 });

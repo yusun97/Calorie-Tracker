@@ -1,5 +1,6 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import React from "react";
+import { darkPurple, white } from "./CommonStyle";
 
 export default function PressableButton({
   buttonPressed,
@@ -15,7 +16,7 @@ export default function PressableButton({
           pressed && styles.pressedStyle,
         ];
       }}
-      android_ripple={{ color: "white" }}
+      android_ripple={{ color: white }}
       onPress={buttonPressed}
     >
       {children}
@@ -24,6 +25,6 @@ export default function PressableButton({
 }
 
 const styles = StyleSheet.create({
-  pressableDefault: { backgroundColor: "rgb(64,70,146)", borderRadius: 5 },
+  pressableDefault: { backgroundColor: darkPurple, borderRadius: 5 },
   pressedStyle: { opacity: 0.3 },
 });

@@ -1,11 +1,18 @@
 import { View, Text, StyleSheet } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { Entypo } from "@expo/vector-icons";
 import Card from "../components/Card";
 import PressableButton from "./PressableButton";
+import {
+  purple,
+  lightPurple,
+  darkPurple,
+  pink,
+  white,
+  yellow,
+} from "./CommonStyle";
 
 export default function MealItem({ mealEntry, onMealPressed }) {
-  const [limit, setLimit] = useState(500);
   // console.log(mealEntry);
   return (
     <View style={{ margin: 10 }}>
@@ -19,7 +26,7 @@ export default function MealItem({ mealEntry, onMealPressed }) {
 
           <View style={{ flexDirection: "row" }}>
             {!mealEntry.review && (
-              <Entypo name="warning" size={23} color="yellow" />
+              <Entypo name="warning" size={23} color={yellow} />
             )}
 
             <View style={styles.caloriesContainer}>
@@ -37,10 +44,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 20,
-    backgroundColor: "rgb(64,70,146)",
+    backgroundColor: darkPurple,
   },
   caloriesContainer: {
-    backgroundColor: "white",
+    backgroundColor: white,
     paddingRight: 15,
     paddingLeft: 15,
     padding: 2,
@@ -49,12 +56,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   caloriesText: {
-    color: "rgb(64,70,146)",
+    color: darkPurple,
     fontWeight: "700",
     fontSize: 18,
   },
   descriptionText: {
-    color: "rgb(219,211,242)",
+    color: pink,
     fontSize: 20,
     fontWeight: "500",
   },
