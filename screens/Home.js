@@ -18,6 +18,7 @@ export default function Home({ navigation }) {
         headerTitleStyle: styles.headerTitleStyle,
         tabBarActiveTintColor: orange,
         tabBarStyle: styles.tabBarStyle,
+        headerTitleAlign: "center",
         headerRight: () => {
           return (
             <PressableButton
