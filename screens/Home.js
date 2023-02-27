@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet, Text, View, BlurView } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AllEntriesScreen from "./AllEntriesScreen";
 import OverLimitEntriesScreen from "./OverLimitEntriesScreen";

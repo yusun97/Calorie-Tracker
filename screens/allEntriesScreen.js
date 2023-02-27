@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View } from "react-native";
 import React from "react";
 import { commonStyle } from "../components/CommonStyle";
 import EntriesList from "../components/EntriesList";

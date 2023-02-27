@@ -1,10 +1,8 @@
-import { View, Text } from "react-native";
-import React, { useEffect } from "react";
+import { View } from "react-native";
+import React from "react";
 import { commonStyle } from "../components/CommonStyle";
 import Input from "../components/Input";
 import { useState } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
-import { firestore } from "../firebase/firebase-setup";
 import { writeToDB } from "../firebase/firebaseHelper";
 
 export default function AddEntriesScreen({ navigation }) {
