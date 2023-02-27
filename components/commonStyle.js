@@ -1,4 +1,4 @@
-import {StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
 
 export const purple = "rgb(126,125,189)";
@@ -14,6 +14,6 @@ export const commonStyle = StyleSheet.create({
   generalContainer: {
     backgroundColor: purple,
     flex: 1,
-    // marginTop: 20,
+    paddingTop: 20,
   },
 });

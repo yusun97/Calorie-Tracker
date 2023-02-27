@@ -3,11 +3,11 @@ import React from "react";
 import { shadowColor, lightPurple } from "./CommonStyle";
 
 export default function Card({ children, customizedStyle }) {
-  return <View style={[styles.card, customizedStyle]}>{children}</View>;
+  return <View style={[styles.cardDefault, customizedStyle]}>{children}</View>;
 }
 
 const styles = StyleSheet.create({
-  card: {
+  cardDefault: {
     shadowOffset: { width: 5, height: 5 },
     shadowRadius: 4,
     shadowOpacity: 0.5,

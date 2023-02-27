@@ -9,7 +9,6 @@ import { updateEntriesToDB, deleteFromDB } from "../firebase/firebaseHelper";
 import { darkPurple, white } from "../components/CommonStyle";
 
 export default function EditEntriesScreen({ navigation, route }) {
-  // console.log(route.params.type);
   function deleteEntries() {
     Alert.alert("Delete", "Are you sure you want to delete this?", [
       { text: "No", style: "cancel" },

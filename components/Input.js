@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingTop: 70,
     margin: 10,
-    // borderWidth: 10,
   },
   text: {
     color: darkPurple,
@@ -82,20 +81,20 @@ const styles = StyleSheet.create({
   },
   rowContainer: {
     flexDirection: "row",
-    padding: 8,
     justifyContent: "space-between",
+    margin: 8,
   },
   buttonContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     margin: 20,
   },
   buttonText: {
     color: white,
     fontSize: 15,
     padding: 10,
-    marginLeft: 30,
-    marginRight: 30,
+    paddingLeft: 30,
+    paddingRight: 30,
   },
   smallTextContainer: {
     backgroundColor: lightPurple,

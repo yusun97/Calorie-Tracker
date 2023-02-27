@@ -6,29 +6,31 @@ import PressableButton from "./PressableButton";
 import { darkPurple, pink, white, yellow } from "./CommonStyle";
 
 export default function MealItem({ mealEntry, onMealPressed }) {
-  // console.log(mealEntry);
   return (
-    <View style={{ margin: 10 }}>
-      <PressableButton
-        buttonPressed={() => {
-          return onMealPressed(mealEntry);
-        }}
-      >
-        <Card customizedStyle={styles.cardContainer}>
-          <Text style={styles.descriptionText}>{mealEntry.description}</Text>
+    <PressableButton
+      buttonPressed={() => {
+        return onMealPressed(mealEntry);
+      }}
+      customizedStyle={{ margin: 10 }}
+    >
+      <Card customizedStyle={styles.cardContainer}>
+        <Text style={styles.descriptionText}>{mealEntry.description}</Text>
 
-          <View style={{ flexDirection: "row" }}>
-            {!mealEntry.review && (
-              <Entypo name="warning" size={23} color={yellow} />
-            )}
-
-            <View style={styles.caloriesContainer}>
-              <Text style={styles.caloriesText}>{mealEntry.calories}</Text>
-            </View>
+        <View style={{ flexDirection: "row" }}>
+          {!mealEntry.review && (
+            <Entypo
+              name="warning"
+              size={24}
+              color={yellow}
+              style={{ paddingRight: 3 }}
+            />
+          )}
+          <View style={styles.caloriesContainer}>
+            <Text style={styles.caloriesText}>{mealEntry.calories}</Text>
           </View>
-        </Card>
-      </PressableButton>
-    </View>
+        </View>
+      </Card>
+    </PressableButton>
   );
 }
 
