@@ -4,7 +4,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
 import EditEntriesScreen from "./screens/EditEntriesScreen";
 import AddEntriesScreen from "./screens/AddEntriesScreen";
-import { commonStyle, white, darkPurple } from "./components/CommonStyle";
+import { white, darkPurple } from "./components/CommonStyle";
+import Login from "./screens/Login";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,8 @@ export default function App() {
           headerTitleAlign: "center",
         }}
       >
+        <Login modalVisible={true} />
+
         <Stack.Screen
           name="Home"
           component={Home}
