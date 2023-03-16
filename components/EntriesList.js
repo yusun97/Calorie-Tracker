@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 import MealItem from "./MealItem";
-import { firestore } from "../firebase/firebase-setup";
+import { auth, firestore } from "../firebase/firebase-setup";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 
 export default function EntriesList({ mealPressed, type }) {
@@ -10,8 +10,15 @@ export default function EntriesList({ mealPressed, type }) {
   useEffect(() => {
     const q =
       type === "overLimitEntries"
-        ? query(collection(firestore, "entries"), where("review", "==", false))
-        : collection(firestore, "entries");
+        ? query(
+            collection(firestore, "entries"),
+            where("review", "==", false),
+            where("user", "==", auth.currentUser.uid)
+          )
+        : query(
+            collection(firestore, "entries"),
+            where("user", "==", auth.currentUser.uid)
+          );
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       if (querySnapshot.empty) {

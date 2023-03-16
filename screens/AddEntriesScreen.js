@@ -4,6 +4,7 @@ import { commonStyle } from "../components/CommonStyle";
 import Input from "../components/Input";
 import { useState } from "react";
 import { writeToDB } from "../firebase/firebaseHelper";
+import { auth } from "../firebase/firebase-setup";
 
 export default function AddEntriesScreen({ navigation }) {
   const [limit, setLimit] = useState(500);
@@ -14,6 +15,7 @@ export default function AddEntriesScreen({ navigation }) {
         calories: changedCalories,
         description: changedDescription,
         review: false,
+        user: auth.currentUser.uid,
       };
       writeToDB(newMeal);
     } else {
@@ -21,6 +23,7 @@ export default function AddEntriesScreen({ navigation }) {
         calories: changedCalories,
         description: changedDescription,
         review: true,
+        user: auth.currentUser.uid,
       };
       writeToDB(newMeal);
     }
