@@ -72,21 +72,6 @@ export default function App() {
           headerTitleAlign: "center",
         }}
       >
-        {/* <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="EditEntries"
-          component={EditEntriesScreen}
-          options={{ title: "Edit Entry" }}
-        />
-        <Stack.Screen
-          name="AddEntries"
-          component={AddEntriesScreen}
-          options={{ title: "Add An Entry" }}
-        /> */}
         {isAuth ? AppStack : AuthStack}
       </Stack.Navigator>
     </NavigationContainer>

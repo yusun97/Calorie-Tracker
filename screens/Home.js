@@ -6,6 +6,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PressableButton from "../components/PressableButton";
 import { darkPurple, white, orange } from "../components/CommonStyle";
 import { StyleSheet } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase/firebase-setup";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,9 +28,25 @@ export default function Home({ navigation }) {
               buttonPressed={() => {
                 navigation.navigate("AddEntries");
               }}
-              customizedStyle={{ padding: 10 }}
+              customizedStyle={{ margin: 10 }}
             >
               <MaterialCommunityIcons name="plus" size={25} color={white} />
+            </PressableButton>
+          );
+        },
+        headerLeft: () => {
+          return (
+            <PressableButton
+              buttonPressed={async () => {
+                try {
+                  await signOut(auth);
+                } catch (error) {
+                  console.log(error);
+                }
+              }}
+              customizedStyle={{ margin: 10 }}
+            >
+              <Ionicons name="exit" size={30} color="white" />
             </PressableButton>
           );
         },
