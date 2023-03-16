@@ -16,4 +16,31 @@ export const commonStyle = StyleSheet.create({
     flex: 1,
     paddingTop: 20,
   },
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  textInput: {
+    width: 200,
+    height: 30,
+    backgroundColor: white,
+    margin: 10,
+    padding: 5,
+  },
+  text: {
+    color: darkPurple,
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+  buttonContainer: {
+    marginTop: 20,
+  },
+  buttonText: {
+    color: white,
+    fontSize: 15,
+    padding: 10,
+    paddingLeft: 30,
+    paddingRight: 30,
+  },
 });
