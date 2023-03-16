@@ -64,7 +64,7 @@ export default function Input({ mealEntered }) {
       <View style={styles.buttonContainer}>
         <PressableButton buttonPressed={resetInformation}>
           <Text style={styles.buttonText}>Reset</Text>
-        </PressableButton>
+        </PressableButton> 
         <PressableButton buttonPressed={validate}>
           <Text style={styles.buttonText}>Submit</Text>
         </PressableButton>

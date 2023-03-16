@@ -1,11 +1,11 @@
-import { commonStyles } from "./commonStyles ";
+import { commonStyle } from "./CommonStyle";
 // import { LinearGradient } from "expo-linear-gradient";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function LinearGradientBackground(props) {
   return (
     <LinearGradient
-      style={commonStyles.generalContainer}
+      style={commonStyle.generalContainer}
       colors={["lightskyblue", "darkslateblue"]}
     >
       {props.children}

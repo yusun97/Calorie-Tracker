@@ -22,7 +22,11 @@ export default function App() {
           headerTitleAlign: "center",
         }}
       >
-        <Login modalVisible={true} />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
 
         <Stack.Screen
           name="Home"
